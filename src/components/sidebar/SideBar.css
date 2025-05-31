@@ -1,0 +1,29 @@
+.sidebar-container {
+    margin-top: 40px;
+    padding: 0px 30px;
+}
+
+.container-sidebar{
+    margin-top: 20px;
+}
+
+.item-sidebar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.item-sidebar:hover {
+    border-radius: 5px;
+    background-color: #b2bac1;
+}
+
+.item-sidebar:active {
+    border-radius: 5px;
+    background-color: #b2bac1;
+}
+
+.icon-sidebar {
+    font-size: 24px;
+    margin-right: 10px;
+}
