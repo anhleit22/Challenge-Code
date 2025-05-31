@@ -6,9 +6,8 @@
   justify-content: center;
   height: 100vh;
   font-family: sans-serif;
-}
 
-.profile-icon-placeholder {
+  .profile-icon-placeholder {
   display: flex;
   align-items: center;     
   justify-content: center;
@@ -19,21 +18,15 @@
   margin-bottom: 20px;
 }
 
-h1 {
-  color: #333;
-  margin-bottom: 10px;
+  .icon-user{
+  font-size: 36px;
 }
 
-p {
-  text-align: center;
-  color: #666;
-  margin-bottom: 20px;
-}
-.login-note {
+  .login-note {
   text-align: left;         
 }
 
-.phone-input-container {
+  .phone-input-container {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -43,24 +36,38 @@ p {
   background-color: white;
   border: 1px solid #b2bac1;
   border-radius: 5px;
-}
-.phone-input {
+
+  .phone-input {
   margin: 0px;
   font-size: 16px;
   outline: none;
   border: none;
   box-shadow: none;
+ } 
+  
+  
+  .send-code-button {
+    padding: 10px 20px;
+    background-color: #87a1fe;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
 }
 
-.send-code-button {
-  padding: 10px 20px;
-  background-color: #87a1fe;
-  color: black;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
 }
-.icon-user{
-  font-size: 36px;
+
+
+h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
 }
