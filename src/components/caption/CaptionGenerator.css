@@ -1,0 +1,39 @@
+.caption-options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.caption-option {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .icon-item {
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+  }
+  .text-title {
+    font-weight: 700;
+  }
+}
+
+
+.caption-option:hover {
+  background-color: #f0f0f0;
+}
+
+.caption-option span:first-child {
+  font-weight: bold;
+}
+
+.caption-option span:last-child {
+  font-size: 0.9em;
+  color: #555;
+} 

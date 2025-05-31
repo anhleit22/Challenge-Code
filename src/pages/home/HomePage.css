@@ -1,0 +1,9 @@
+.body-container {
+  display: flex;
+  padding: 0px 40px;
+  max-width: 650px;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+}

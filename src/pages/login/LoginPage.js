@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './LoginPage.css'; // We will create this CSS file next
+import './LoginPage.css';
 
 function LoginPage() {
     const [stateButtonSubmit, setStateButtonSubmit] = useState(false);
@@ -10,7 +10,7 @@ function LoginPage() {
         setStateButtonSubmit(false)
     }
   return (
-    <div className="login-container">
+    <div className="body-container">
       <div className="profile-icon-placeholder">
         <i class="fa-regular fa-user icon-user"></i>
       </div>
