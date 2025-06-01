@@ -9,13 +9,13 @@ import ProtectedRoute from './ProtectedRoute';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <BrowserRouter>
      <LoginProvider>
-     {/* <ProtectedRoute> */}
-    <App />
-     {/* </ProtectedRoute> */}
-     </LoginProvider>
+     <BrowserRouter>
+     <ProtectedRoute>
+      <App />
+     </ProtectedRoute>
      </BrowserRouter>
+     </LoginProvider>
   </React.StrictMode>
 );
 

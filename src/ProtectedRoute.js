@@ -1,11 +1,12 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
 import { useLogin } from './LoginProvider';
+import { useLocation } from 'react-router-dom';
 
 const ProtectedRoute = ({ children }) => {
   const { user } = useLogin();
-  if (!user) {
-    return <Navigate to="/login" replace />;
+  const location = useLocation();
+  if (!user && location.pathname !== '/login') {
+    window.location.href = '/login';
+    return null;
   }
   return children;
 };
