@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
+import { LoginProvider } from './LoginProvider';
+import ProtectedRoute from './ProtectedRoute';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
      <BrowserRouter>
+     <LoginProvider>
+     {/* <ProtectedRoute> */}
     <App />
+     {/* </ProtectedRoute> */}
+     </LoginProvider>
      </BrowserRouter>
   </React.StrictMode>
 );

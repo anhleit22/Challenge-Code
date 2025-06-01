@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
 import { loginWithCodePhone, validateCode } from '../../api/login';
+import { useNavigate } from 'react-router-dom';
+import { useLogin } from '../../LoginProvider';
+
 
 function LoginPage() {
     const [stateButtonSubmit, setStateButtonSubmit] = useState(false);
-    const [phone, setPhone] = useState(null);
-    const [code, setCode] = useState(null);
+    const [phone, setPhone] = useState('');
+    const [code, setCode] = useState('');
     const [loading, setLoading] = useState(false); // Add loading state
+    const { user, setUser } = useLogin();
+    const navigate = useNavigate();
+
     const handleSubmitCallOTP = async ()=> {
         setLoading(true); // Start loading
         let res = await login();
@@ -25,9 +31,11 @@ function LoginPage() {
        setLoading(true); 
        let res = await validatePhoneWithCode()
        if(res && res.status == 200){
-          window.location.href = '/'
+        setUser(true);
+        navigate('/');
        }else{
           alert('Your code is incorrect')
+          setUser(false);
        }
        setLoading(false); 
     }
@@ -63,14 +71,14 @@ function LoginPage() {
   return (
     <div className="body-container">
       <div className="profile-icon-placeholder">
-        <i class="fa-regular fa-user icon-user"></i>
+        <i className="fa-regular fa-user icon-user"></i>
       </div>
       <h1>Welcome to Skipli AI</h1>
         {!stateButtonSubmit ? (
             <>
                 <p className='login-note'>Enter a mobile phone number that you have access to. <br/> This number will be use to login to SkipliAI.</p>
                 <div className="phone-input-container">
-                <span >+1</span>
+                <span>+1</span>
                 <input onChange={(e)=>setPhone(e.target.value)} value={phone} type="text" className='phone-input'/>
                 </div>
                 <button onClick={handleSubmitCallOTP} className="send-code-button" disabled={loading}>
