@@ -14,7 +14,7 @@
     margin: auto;
     max-width: 28rem;
     width: 100%;
-    padding: 1.5rem;
+    padding: 0px 1.5rem;
   }
   
   .title-fb {
@@ -57,7 +57,14 @@
   .button-fb:hover {
     background-color: #c7d2fe;
   }
-  .caption-wrapper-post {
+
+  .caption-wrapper-listpost {
+    overflow-y: auto;
+    max-height: 350px;
+    padding: 20px;
+  }
+
+  .caption-item-post {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,15 +75,11 @@
     margin: 10px auto;
     font-family: sans-serif;
   }
-  
-  .caption-title {
-    font-size: 18px;
+
+  .header-list-post{
     font-weight: bold;
-    margin-bottom: 8px;
-  }
-  .caption-header-post{
-    font-weight: bold;
-    margin-bottom: 8px;
+    margin:10px auto;
+    text-align: center;
   }
   
   .caption-box {

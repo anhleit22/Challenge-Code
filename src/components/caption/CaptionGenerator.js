@@ -11,7 +11,7 @@ function CaptionGenerator() {
   };
   return (
     <div>
-      <h2>Generate unique captions from scratch</h2>
+      <h2 className='caption-title'>Generate unique captions from scratch</h2>
       <p>Choose the type of post you want a caption for, and let Skipli AI write it for you</p>
       <p>What kind of post do you want a caption for?</p>
       <div className="caption-options-container">

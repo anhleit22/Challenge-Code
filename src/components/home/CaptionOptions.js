@@ -7,9 +7,9 @@ export default function CaptionOptions() {
   return (
     <div className="caption-wrapper">
       <div className="caption-container">
-        <h1 className="caption-title">
+        <h2 className="caption-title">
           Generate post ideas and captions in seconds
-        </h1>
+        </h2>
 
         <div className="caption-buttons">
           <Link className='link-item' to={config.Routes.caption} >

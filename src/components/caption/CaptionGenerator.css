@@ -12,10 +12,10 @@
   transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
 
   .icon-item {
-    padding: 5px;
+    padding: 16px;
     border: 1px solid;
     border-radius: 5px;
   }
@@ -23,6 +23,7 @@
     font-weight: 700;
   }
 }
+
 
 
 .caption-option:hover {

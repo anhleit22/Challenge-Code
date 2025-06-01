@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   width: fit-content;
-  margin-bottom: 1rem;
+  margin-bottom: 5px;
   line-height: 1.6;
 }
 
@@ -69,4 +69,6 @@ input, textarea, select {
   width: 70vw;
   padding: 0px 10px;
   background-color: white;
+  height: 100vh;
+  overflow: hidden;
 }

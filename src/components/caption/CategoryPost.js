@@ -35,7 +35,7 @@ function CategoryPost() {
   return (
     <div className='body-container-post'>
       <div className="container-item-fb">
-        <h1 className="title-fb">Facebook post</h1>
+        <h2 className="caption-title">Facebook post</h2>
 
         <label className="label-fb" htmlFor="topic-input">
           What topic do you want a caption for?
@@ -78,18 +78,20 @@ function CategoryPost() {
         </button>
         
       </div>
-      {listPost.length > 0 && <h2 className="caption-title-post">Captions generated for you</h2>}
-        {listPost?.map((item) => {
-            return (
-            <div className="caption-wrapper-post">
-              <div className='caption-header-post'>{item.social}</div>
-              <p className="caption-content">{item.content}</p>
-              <div className="caption-buttons-post">
-                <button className="btn-share">Share</button>
-                <button className="btn-save">Save</button>
+      {listPost.length > 0 && <div className="header-list-post"><h2>Captions generated for you</h2></div>}
+        <div className='caption-wrapper-listpost'>
+          {listPost?.map((item) => {
+              return (
+              <div className="caption-item-post">
+                <div className='caption-header-post'>{item.social}</div>
+                <p className="caption-content">{item.content}</p>
+                <div className="caption-buttons-post">
+                  <button className="btn-share">Share</button>
+                  <button className="btn-save">Save</button>
+                </div>
               </div>
-            </div>
-            )})}
+              )})}
+        </div>
     </div>
   );
 }
