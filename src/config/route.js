@@ -4,5 +4,6 @@ const Routes = {
   caption: "/caption",
   fb: "/caption/fb",
   inspried: "/caption/inspried",
+  profile: "/profile",
 };
 export default Routes;

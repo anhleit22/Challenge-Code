@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import './CategoryPost.css';
 import { generatePost, savePost } from '../../api/generation-post';
+import { useLogin } from '../../LoginProvider';
 
 function CategoryPost() {
   const [topic, setTopic] = useState('');
   const [tone, setTone] = useState('Friendly');
   const [listPost, setListContent] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { id } = useLogin();
+
 
   const handleGenerate = async () => {
     if (!topic) return;
@@ -34,7 +37,11 @@ function CategoryPost() {
 
   const handleSavePost = async(post) => {
     if(post){
-      const res = await saveListPost(post);
+      let data = {
+        ...post,
+        id_author: id
+      }
+      const res = await saveListPost(data);
       if(res){
         alert(res.data.message)
       }

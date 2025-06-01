@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Inspired.css';
 import { generateIdeas, generateListIdeasPost, saveIdea } from '../../api/ideas';
+import { useLogin } from '../../LoginProvider';
 
 function GetInspired() {
   const [topic, setTopic] = useState('');
@@ -8,6 +9,7 @@ function GetInspired() {
   const [listIdeas, setListIdeas] = useState([]); 
   const [selectedIdeas, setSelectedIdeas] = useState();
   const [listPost, setListPost] = useState([]);
+  const {id} = useLogin();
 
   const handleGenerate = async () => {
     if (topic.trim()) {
@@ -77,7 +79,8 @@ function GetInspired() {
   const handleSavePost = async (item) => {
          if(item){
            let data = {
-            ...item
+            ...item,
+            id_author: id
            }
            const res = await saveIdeaPost(data);
            if(res){

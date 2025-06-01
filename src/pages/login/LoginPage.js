@@ -10,13 +10,14 @@ function LoginPage() {
     const [phone, setPhone] = useState('');
     const [code, setCode] = useState('');
     const [loading, setLoading] = useState(false); // Add loading state
-    const { user, setUser } = useLogin();
+    const { user, setUser, id , setID, phoneAPI ,setPhoneAPI } = useLogin();
+
     const navigate = useNavigate();
 
     const handleSubmitCallOTP = async ()=> {
-        setLoading(true); // Start loading
+        setLoading(true); 
         let res = await login();
-        setLoading(false); // End loading
+        setLoading(false); 
         if(res && res.status == 200){
             setStateButtonSubmit(true)
         }else{
@@ -32,6 +33,8 @@ function LoginPage() {
        let res = await validatePhoneWithCode()
        if(res && res.status == 200){
         setUser(true);
+        setID(res.data.data.id);
+        setPhoneAPI(res.data.data.phone)
         navigate('/');
        }else{
           alert('Your code is incorrect')

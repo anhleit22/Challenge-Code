@@ -4,6 +4,7 @@ import config from "../config";
 import CaptionPage from "../pages/caption/CaptionPage";
 import HomePage from "../pages/home/HomePage";
 import LoginPage from "../pages/login/LoginPage";
+import ProfilePage from "../pages/profile/ProfilePage";
 
 // Public routes
 export const publicRoutes = [
@@ -12,4 +13,5 @@ export const publicRoutes = [
   { path: config.Routes.caption, component: CaptionPage },
   { path: config.Routes.fb, component: CategoryPost },
   { path: config.Routes.inspried, component: GetInspired },
+  { path: config.Routes.profile, component: ProfilePage },
 ];
