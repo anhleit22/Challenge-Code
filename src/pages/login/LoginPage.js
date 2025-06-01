@@ -1,20 +1,35 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
-import { loginWithCodePhone } from '../../api/login';
+import { loginWithCodePhone, validateCode } from '../../api/login';
 
 function LoginPage() {
     const [stateButtonSubmit, setStateButtonSubmit] = useState(false);
     const [phone, setPhone] = useState(null);
+    const [code, setCode] = useState(null);
+    const [loading, setLoading] = useState(false); // Add loading state
     const handleSubmitCallOTP = async ()=> {
+        setLoading(true); // Start loading
         let res = await login();
-        if(res.status == 200){
+        setLoading(false); // End loading
+        if(res && res.status == 200){
             setStateButtonSubmit(true)
         }else{
             setStateButtonSubmit(false)
         }
     }
-    const handleSubmit = ()=> {
-        setStateButtonSubmit(false)
+    const handleSubmit = async ()=> {
+      if(!code){
+        alert('Please enter your code')
+        return;
+      }
+       setLoading(true); 
+       let res = await validatePhoneWithCode()
+       if(res && res.status == 200){
+          window.location.href = '/'
+       }else{
+          alert('Your code is incorrect')
+       }
+       setLoading(false); 
     }
     const login = async () => {
         try {
@@ -26,6 +41,20 @@ function LoginPage() {
             if(res){
               return res;
             }
+          }
+        } catch (error) {
+          console.log(error);
+        }
+    }
+    const validatePhoneWithCode = async () => {
+        try { 
+          let data = {
+            phone: phone,
+            code: code
+          }
+          const res = await validateCode(data)
+          if(res){
+            return res;
           }
         } catch (error) {
           console.log(error);
@@ -44,15 +73,17 @@ function LoginPage() {
                 <span >+1</span>
                 <input onChange={(e)=>setPhone(e.target.value)} value={phone} type="text" className='phone-input'/>
                 </div>
-                <button onClick={handleSubmitCallOTP} className="send-code-button">Send Verification Code</button>
+                <button onClick={handleSubmitCallOTP} className="send-code-button" disabled={loading}>
+                  {loading ? 'Sending...' : 'Send Verification Code'}
+                </button>
             </>
         ) : (
             <>
-                <p>SkipliAI has sent an OTP code to: +1</p>
+                <p>SkipliAI has sent an OTP code to: +1 {phone}</p>
                 <div className='phone-input-container'>
-                <input type="text" placeholder="Enter your code here" className="phone-input" />
+                <input onChange={(e)=>setCode(e.target.value)} value={code} type="text" placeholder="Enter your code here" className="phone-input" />
                 </div>
-                <button onClick={handleSubmit} className="send-code-button">Submit</button>
+                <button onClick={handleSubmit} className="send-code-button"> {loading ? 'Sending...' : 'Submit'}</button>
             </>
         )}
     </div>
