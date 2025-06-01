@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './CategoryPost.css';
 import { generatePost } from '../../api/generation-post';
+import { savePost } from '../../api/post';
 
 function CategoryPost() {
   const [topic, setTopic] = useState('');
@@ -31,6 +32,25 @@ function CategoryPost() {
       setLoading(false);
     }
   };
+
+  const handleSavePost = async(post) => {
+    if(post){
+      const res = await saveListPost(post);
+      if(res){
+        console.log(res);
+      }
+    }
+  }
+  const saveListPost = async (data) => {
+    try {
+      const res = await savePost(data);
+      if (res) {
+        return res
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className='body-container-post'>
@@ -87,7 +107,7 @@ function CategoryPost() {
                 <p className="caption-content">{item.content}</p>
                 <div className="caption-buttons-post">
                   <button className="btn-share">Share</button>
-                  <button className="btn-save">Save</button>
+                  <button onClick={()=>handleSavePost(item)} className="btn-save">Save</button>
                 </div>
               </div>
               )})}
