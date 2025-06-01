@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './CategoryPost.css';
-import { generatePost } from '../../api/generation-post';
-import { savePost } from '../../api/post';
+import { generatePost, savePost } from '../../api/generation-post';
 
 function CategoryPost() {
   const [topic, setTopic] = useState('');

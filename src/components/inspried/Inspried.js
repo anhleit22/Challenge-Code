@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Inspired.css';
-import { generateIdeas, generateListIdeasPost } from '../../api/ideas';
+import { generateIdeas, generateListIdeasPost, saveIdea } from '../../api/ideas';
 
 function GetInspired() {
   const [topic, setTopic] = useState('');
@@ -44,7 +44,6 @@ function GetInspired() {
   const handleSelectIdeas = (item) => {
     if(item) {
       setSelectedIdeas(item);
-      console.log(selectedIdeas);
     }
   }
 
@@ -76,7 +75,26 @@ function GetInspired() {
   }
 
   const handleSavePost = async (item) => {
-        console.log(item);
+         if(item){
+           let data = {
+            ...item
+           }
+           const res = await saveIdeaPost(data);
+           if(res){
+             alert(res.data.message);
+           }
+         }
+  }
+
+  const saveIdeaPost = async (data) => {
+    try {
+        const res = await saveIdea(data);
+        if (res) {
+            return res
+        }
+    } catch (error) {
+        console.log(error);
+    }
   }
 
   return (

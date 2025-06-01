@@ -6,3 +6,6 @@ export function generateIdeas(data) {
 export function generateListIdeasPost(data) {
     return service.post('/api/generate-list-ideas',data)
 }
+export function saveIdea(data) {
+    return service.post('/api/save-ideas',data)
+}
