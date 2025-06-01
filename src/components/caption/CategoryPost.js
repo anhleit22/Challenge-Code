@@ -37,7 +37,7 @@ function CategoryPost() {
     if(post){
       const res = await saveListPost(post);
       if(res){
-        console.log(res);
+        alert(res.data.message)
       }
     }
   }
