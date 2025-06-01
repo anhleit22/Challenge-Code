@@ -1,0 +1,57 @@
+.caption-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+    padding: 20px;
+  }
+  
+  .caption-container {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .caption-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937; /* text-gray-800 */
+    margin-bottom: 24px;
+  }
+  
+  .caption-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .caption-card {
+    width: 100%;
+    border: 1px solid #d1d5db; /* border-gray-300 */
+    border-radius: 12px;
+    padding: 16px;
+    text-align: left;
+    background-color: white;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .caption-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .caption-heading {
+    font-weight: 500;
+    color: #111827; /* text-gray-900 */
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  
+  .caption-subtext {
+    font-size: 14px;
+    color: #6b7280; /* text-gray-500 */
+  }
+  .link-item {
+    width: 100%;
+  }
+  

@@ -1,7 +1,14 @@
 import React from 'react';
 import './CaptionGenerator.css';
+import { useNavigate } from 'react-router-dom';
 
 function CaptionGenerator() {
+  const navigate = useNavigate();
+  const handleClickCategory = (category) => {
+    if(category === 'fb'){
+      navigate('/caption/fb');
+    }
+  };
   return (
     <div>
       <h2>Generate unique captions from scratch</h2>
@@ -9,7 +16,7 @@ function CaptionGenerator() {
       <p>What kind of post do you want a caption for?</p>
       <div className="caption-options-container">
         {/* Facebook option */}
-        <div className="caption-option">
+        <div onClick={()=>handleClickCategory('fb')} className="caption-option">
           {/* Icon placeholder */}
           <i className="icon-item fab fa-facebook"></i>
           <div>

@@ -22,10 +22,11 @@
   
   .item-sidebar:hover {
     border-radius: 5px;
-    background-color: #b2bac1;
+    background-color: #f0f0f0;
   }
   
   .item-sidebar.active {
     border-radius: 5px;
-    background-color: #b2bac1;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
   }

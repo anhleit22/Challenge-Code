@@ -73,7 +73,7 @@ function LoginPage() {
       <div className="profile-icon-placeholder">
         <i className="fa-regular fa-user icon-user"></i>
       </div>
-      <h1>Welcome to Skipli AI</h1>
+      <h1>Welcome to Skipli AI 288665</h1>
         {!stateButtonSubmit ? (
             <>
                 <p className='login-note'>Enter a mobile phone number that you have access to. <br/> This number will be use to login to SkipliAI.</p>

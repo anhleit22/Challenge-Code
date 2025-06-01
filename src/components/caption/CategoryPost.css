@@ -1,0 +1,121 @@
+.body-container-post {
+    margin-top: 40px;
+    display: flex;
+    padding: 0px 40px;
+    flex-direction: column;
+    font-family: sans-serif;
+    background-color: white;
+    overflow: hidden;
+    .item{
+      max-width: 650px;
+    }
+  }
+  .container-item-fb {
+    margin: auto;
+    max-width: 28rem;
+    width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .title-fb {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .label-fb {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4a5568;
+  }
+  
+  .input-fb,
+  .select-fb {
+    width: 100%;
+    border: 1px solid #d1d5db; 
+    border-radius: 5px; 
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+    outline: none;
+    font-size: 1rem;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .button-fb {
+    background-color: #e0e7ff; 
+    color: #3730a3;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  .button-fb:hover {
+    background-color: #c7d2fe;
+  }
+  .caption-wrapper-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 500px; 
+    margin: 10px auto;
+    font-family: sans-serif;
+  }
+  
+  .caption-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .caption-header-post{
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .caption-box {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .caption-content {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    white-space: pre-line;
+  }
+  
+  .caption-buttons-post {
+    display: flex;
+    justify-content: flex-between;
+    gap: 8px;
+  }
+  
+  .btn-share {
+    background-color: #d9f3f7;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .btn-save {
+    background-color: #f3f3f3;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #333;
+    font-weight: 500;
+  }
