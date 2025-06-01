@@ -20,7 +20,7 @@ export default function CaptionOptions() {
             </div>
           </button>
           </Link>
-          <Link className='link-item' to={config.Routes.caption} >
+          <Link className='link-item' to={config.Routes.inspried} >
           <button className="caption-card">
             <div className="caption-heading">Get inspired</div>
             <div className="caption-subtext">

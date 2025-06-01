@@ -1,4 +1,5 @@
 import CategoryPost from "../components/caption/CategoryPost";
+import GetInspired from "../components/inspried/Inspried";
 import config from "../config";
 import CaptionPage from "../pages/caption/CaptionPage";
 import HomePage from "../pages/home/HomePage";
@@ -10,4 +11,5 @@ export const publicRoutes = [
   { path: config.Routes.home, component: HomePage },
   { path: config.Routes.caption, component: CaptionPage },
   { path: config.Routes.fb, component: CategoryPost },
+  { path: config.Routes.inspried, component: GetInspired },
 ];

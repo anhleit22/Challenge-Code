@@ -3,5 +3,6 @@ const Routes = {
   home: "/",
   caption: "/caption",
   fb: "/caption/fb",
+  inspried: "/caption/inspried",
 };
 export default Routes;
