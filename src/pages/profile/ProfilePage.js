@@ -35,9 +35,6 @@ function ProfilePage() {
           console.log(item);
           if(item) {
             const res = await unSavePostIdea(item.id);
-            if(res) {
-              alert(res.message);
-            }
               fetchData();
           }
         } catch (error) {
