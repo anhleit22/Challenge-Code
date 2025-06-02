@@ -2,8 +2,7 @@
 
 ## 🧾 Steps to Run the Project
 
-### 1️⃣ Clone the Repository
-```bash
+**1️⃣ Clone the Repository**
 git clone https://github.com/anhleit22/Challenge-Code.git
 cd Challenge-Code
 
