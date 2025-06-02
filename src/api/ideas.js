@@ -9,3 +9,7 @@ export function generateListIdeasPost(data) {
 export function saveIdea(data) {
     return service.post('/api/save-ideas',data)
 }
+export function unSavePost(id) {
+    return service.delete('/api/unsave/' + id)
+}
+
