@@ -1,16 +1,13 @@
-🚀 React Project - Getting Started
+# 🚀 React Project - Getting Started
 
-🧾 Steps to Run the Project
+## 🧾 Steps to Run the Project
 
 ### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/anhleit22/Challenge-Code.git
 cd Challenge-Code
 
-### 2️⃣ Install Dependencies
-```bash
+** 2️⃣ Install Dependencies**
 npm install
-
-### 3️⃣ Start the Development Server
-```bash
+**3️⃣ Start the Development Server**
 npm start
