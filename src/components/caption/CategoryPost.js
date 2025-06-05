@@ -8,6 +8,7 @@ function CategoryPost() {
   const [tone, setTone] = useState('Friendly');
   const [listPost, setListContent] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [loadingBTN, setLoadingBTN] = useState(false);
   const { id } = useLogin();
 
 
@@ -25,7 +26,6 @@ function CategoryPost() {
     try {
       const res = await generatePost(data);
       if (res) {
-        console.log(res.data);
         setListContent(res.data.data)
       }
     } catch (error) {
@@ -41,7 +41,9 @@ function CategoryPost() {
         ...post,
         id_author: id
       }
+      setLoadingBTN(true);
       const res = await saveListPost(data);
+      setLoadingBTN(false);
       if(res){
         alert(res.data.message)
       }
@@ -113,7 +115,7 @@ function CategoryPost() {
                 <p className="caption-content">{item.content}</p>
                 <div className="caption-buttons-post">
                   <button className="btn-share">Share</button>
-                  <button onClick={()=>handleSavePost(item)} className="btn-save">Save</button>
+                  <button disabled={loadingBTN} onClick={()=>handleSavePost(item)} className="btn-save">{loadingBTN ? 'Saving ...' : 'Save'}</button>
                 </div>
               </div>
               )})}

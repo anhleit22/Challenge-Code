@@ -6,6 +6,7 @@ import { useLogin } from '../../LoginProvider';
 function GetInspired() {
   const [topic, setTopic] = useState('');
   const [loading, setLoading] = useState(false);
+  const [loadingBTN, setLoadingBTN] = useState(false);
   const [listIdeas, setListIdeas] = useState([]); 
   const [selectedIdeas, setSelectedIdeas] = useState();
   const [listPost, setListPost] = useState([]);
@@ -62,6 +63,8 @@ function GetInspired() {
         }
       }catch(error){
         console.log(error);
+      }finally{
+         setLoading(false);
       }
     }
   }
@@ -82,7 +85,9 @@ function GetInspired() {
             ...item,
             id_author: id
            }
+           setLoadingBTN(true);
            const res = await saveIdeaPost(data);
+           setLoadingBTN(false);
            if(res){
              alert(res.data.message);
            }
@@ -108,7 +113,7 @@ function GetInspired() {
         <div className="card-ideas">
             {selectedIdeas.title_topic}
         </div>
-        <div className='generate-button-container'><button className="generate-button" onClick={() => handleGenerateIdeas(selectedIdeas)}>Create Caption</button></div>
+        <div className='generate-button-container'><button disabled={loading} className="generate-button" onClick={() => handleGenerateIdeas(selectedIdeas)}>{loading ? "Creating ..." : "Create Caption"}</button></div>
         <div>
         {listPost.length > 0 && <div className="header-list-post"><h2>Captions generated for you</h2></div>}
         <div className='caption-wrapper-listpost'>
@@ -119,7 +124,7 @@ function GetInspired() {
                 <p className="caption-content">{item.content}</p>
                 <div className="caption-buttons-post">
                   <button className="btn-share">Share</button>
-                  <button onClick={()=>handleSavePost(item)} className="btn-save">Save</button>
+                  <button disabled={loadingBTN} onClick={()=>handleSavePost(item)} className="btn-save">{loadingBTN ? 'Saving ...' : 'Save'}</button>
                 </div>
               </div>
               )})}

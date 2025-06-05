@@ -57,6 +57,10 @@
   .button-fb:hover {
     background-color: #c7d2fe;
   }
+  .button-fb:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 
   .caption-wrapper-listpost {
     overflow-y: auto;
@@ -121,4 +125,8 @@
     cursor: pointer;
     color: #333;
     font-weight: 500;
+  }
+  .btn-save:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
